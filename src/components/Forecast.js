@@ -15,7 +15,7 @@ export default function Forecast({ forecastData }) {
             <img src={data.day.condition.icon} alt="icon" />
             <div className="flex flex-col text-base">
               <h4 className="text-base font-bold ">{data.date}</h4>
-              <span className="text-indigo-200 opacity-40">
+              <span className="text-indigo-900 opacity-40">
                 {data.day.condition.text}
               </span>
             </div>
