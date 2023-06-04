@@ -6,6 +6,8 @@ Display the current weather data, forecast for the next 3 days as well as hourly
 ## Progress Bar
 Work in progress
 
+## API Used
+[Weather API](https://rapidapi.com/weatherapi/api/weatherapi-com) : GET Forecast weather api
 
 ## Screenshots
 ![screenshot]("./../src/assets/screenshot.png)
