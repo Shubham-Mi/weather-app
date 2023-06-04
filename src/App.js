@@ -44,22 +44,76 @@ function App() {
       gust_mph: 5.4,
       gust_kph: 8.6,
     },
+    forecast: {
+      forecastday: [
+        {
+          date: "2023-06-04",
+          day: {
+            maxtemp_c: 39.8,
+            maxtemp_f: 103.6,
+            mintemp_c: 31.2,
+            mintemp_f: 88.2,
+            avgtemp_c: 35.5,
+            avgtemp_f: 95.9,
+            condition: {
+              text: "Patchy rain possible",
+              icon: "//cdn.weatherapi.com/weather/64x64/day/176.png",
+              code: 1063,
+            },
+          },
+        },
+        {
+          date: "2023-06-05",
+          day: {
+            maxtemp_c: 39.8,
+            maxtemp_f: 103.6,
+            mintemp_c: 31.2,
+            mintemp_f: 88.2,
+            avgtemp_c: 35.5,
+            avgtemp_f: 95.9,
+            condition: {
+              text: "Patchy rain possible",
+              icon: "//cdn.weatherapi.com/weather/64x64/day/176.png",
+              code: 1063,
+            },
+          },
+        },
+        {
+          date: "2023-06-06",
+          day: {
+            maxtemp_c: 39.8,
+            maxtemp_f: 103.6,
+            mintemp_c: 31.2,
+            mintemp_f: 88.2,
+            avgtemp_c: 35.5,
+            avgtemp_f: 95.9,
+            condition: {
+              text: "Patchy rain possible",
+              icon: "//cdn.weatherapi.com/weather/64x64/day/176.png",
+              code: 1063,
+            },
+          },
+        },
+      ],
+    },
   });
 
   const fetchData = async (name) => {
     if (name === "") return;
-    console.log(name);
-    const option = {
+    const options = {
       method: "GET",
-      url: "https://weatherapi-com.p.rapidapi.com/current.json",
-      params: { q: name },
+      url: "https://weatherapi-com.p.rapidapi.com/forecast.json",
+      params: {
+        q: name,
+        days: 3,
+      },
       headers: {
         "X-RapidAPI-Key": "84117cf55bmsh6ab243989d4466bp1b7d57jsn373b656e33ad",
         "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
       },
     };
-    const response = await axios.request(option);
-    console.log(response.data);
+    const response = await axios.request(options);
+    console.log("App", response.data);
     setRealtimeData(response.data);
   };
   return (
