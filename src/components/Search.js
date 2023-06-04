@@ -2,11 +2,11 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import Temperature from "./Temperature";
 
-export default function Search({ fetchData }) {
+export default function Search({ fetchData, realtimeData }) {
   return (
-    <div className="search flex-grow">
+    <div className="search flex-grow space-y-8">
       <SearchBar fetchData={fetchData} />
-      <Temperature />
+      <Temperature realtimeData={realtimeData} />
     </div>
   );
 }

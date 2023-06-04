@@ -8,6 +8,7 @@ export default function SearchBar({ fetchData }) {
   const submitData = (e) => {
     e.preventDefault();
     fetchData(name);
+    setName("");
   };
   return (
     <form className="search-bar" onSubmit={submitData}>
@@ -32,6 +33,7 @@ export default function SearchBar({ fetchData }) {
         </svg>
         <input
           type="text"
+          autoFocus={true}
           value={name}
           onChange={updateName}
           placeholder="Search"
