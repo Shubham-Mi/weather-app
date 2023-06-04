@@ -113,13 +113,12 @@ function App() {
       },
     };
     const response = await axios.request(options);
-    console.log("App", response.data);
     setRealtimeData(response.data);
   };
   return (
     <div className="App flex h-screen bg-clouds-weather bg-cover bg-center bg-no-repeat">
       <div className="main m-10 flex w-full flex-row divide-x-2 divide-inherit rounded-xl border-8 border-solid border-gray-500">
-        <MainDisplay />
+        <MainDisplay realtimeData={realtimeData} />
         <RightPane fetchData={fetchData} realtimeData={realtimeData} />
       </div>
     </div>
